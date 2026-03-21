@@ -1,0 +1,79 @@
+<html metal:use-macro="load: base.pt">
+<head>
+    <metal:css fill-slot="extra_css">
+        <link rel="stylesheet" href="style_perfil_client.css" />
+    </metal:css>
+</head>
+<body>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
+    </header>
+
+    <main metal:fill-slot="main">
+               
+        <div class="profile-header-large">
+            <div class="profile-avatar-edit">
+                <img src="https://i.pravatar.cc/150?img=11" class="avatar-img" alt="Foto de Perfil">
+                <div class="edit-badge"><i class="fa-solid fa-camera"></i></div>
+            </div>
+            <h2 id="nomePerfil" style="font-size: 24px;">Carregando...</h2>
+            <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 8px;">Membro Gold</p>
+        </div>
+
+        <div class="profile-container">
+            
+            <div class="loyalty-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <p style="font-size: 10px; text-transform: uppercase; opacity: 0.8; letter-spacing: 1px;">Pontos Acumulados</p>
+                        <h3 style="font-size: 32px; color: var(--gold); margin: 5px 0;">12,450</h3>
+                    </div>
+                    <i class="fa-solid fa-crown" style="color: var(--gold); font-size: 24px;"></i>
+                </div>
+                <div style="margin-top: 20px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                    <div style="width: 75%; height: 100%; background: var(--gold); border-radius: 3px;"></div>
+                </div>
+                <p style="font-size: 11px; margin-top: 10px; opacity: 0.7;">Faltam 2,550 pontos para o nível Platinum</p>
+            </div>
+
+            <p class="section-title">A Minha Conta</p>
+            <div class="menu-group">
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Dados Pessoais</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>Histórico de Reservas</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+
+            <p class="section-title">Preferências e Segurança</p>
+            <div class="menu-group">
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notificações</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a onclick="terminarSessao()" class="menu-item logout-btn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Terminar Sessão</span>
+                </a>
+            </div>
+        </div>
+    </main>
+        
+    <footer metal:fill-slot="main-footer"></footer>
+
+
+    <metal:css fill-slot="extra_js">
+        <script src="auth.js"></script>
+        <script>
+            verificarAcesso();
+        </script>
+    </metal:css>
+    
+</body>
+</html>

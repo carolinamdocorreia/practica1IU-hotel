@@ -1,0 +1,103 @@
+<html metal:use-macro="load: base.pt">
+<head>
+    <metal:css fill-slot="extra_css">
+        <link rel="stylesheet" href="style_instalacions.css" />
+    </metal:css>
+</head>
+<body>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
+    </header>
+
+    <main metal:fill-slot="main">
+       <div class="facility-hero">
+            <h3 style="font-size: 24px; font-weight: 600;">Infinity Pool</h3>
+            <p style="font-size: 14px; color: var(--gold); margin-top: 10px;">Aberta hoje até às 22:00</p>
+        </div>
+
+        <div class="facilities-grid">
+            
+            <div class="facility-card" onclick="this.classList.toggle('active')">
+                <div class="facility-main-info">
+                    <div class="facility-icon"><i class="fa-solid fa-spa"></i></div>
+                    <span class="facility-name">Spa & Wellness</span>
+                    <span class="facility-status status-open">Aberto</span>
+                </div>
+                
+                <div class="facility-expandable">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80" alt="Spa" class="facility-img">
+                    <div class="facility-info-content">
+                        <p>Rituais de relaxamento, massagens terapêuticas e sauna panorâmica.</p>
+                        <ul class="facility-details-list">
+                            <li><i class="fa-regular fa-clock"></i> 09:00 - 21:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Piso -1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card" onclick="this.classList.toggle('active')">
+                <div class="facility-main-info">
+                    <div class="facility-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <span class="facility-name">Ginásio 24/7</span>
+                    <span class="facility-status status-open">Aberto</span>
+                </div>
+                
+                <div class="facility-expandable">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Ginásio" class="facility-img">
+                    <div class="facility-info-content">
+                        <p>Equipamentos Technogym de última geração com vista para o mar.</p>
+                        <ul class="facility-details-list">
+                            <li><i class="fa-regular fa-clock"></i> Disponível 24h</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Piso 1</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card" onclick="this.classList.toggle('active')">
+                <div class="facility-main-info">
+                    <div class="facility-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <span class="facility-name">Restaurante</span>
+                    <span class="facility-status status-open">Aberto</span>
+                </div>
+                
+                <div class="facility-expandable">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80" alt="Restaurante" class="facility-img">
+                    <div class="facility-info-content">
+                        <p>Cozinha de autor inspirada nos sabores do Atlântico.</p>
+                        <ul class="facility-details-list">
+                            <li><i class="fa-regular fa-clock"></i> 12:30 - 15:00 | 19:30 - 23:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Piso 0 (Lobby)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="facility-card" onclick="this.classList.toggle('active')">
+                <div class="facility-main-info">
+                    <div class="facility-icon"><i class="fa-solid fa-child-reaching"></i></div>
+                    <span class="facility-name">Kids Club</span>
+                    <span class="facility-status status-closed">Fechado</span>
+                </div>
+                
+                <div class="facility-expandable">
+                    <img src="https://images.unsplash.com/photo-1566411520896-01e7ca4726af?auto=format&fit=crop&w=600&q=80" alt="Kids Club" class="facility-img">
+                    <div class="facility-info-content">
+                        <p>Atividades lúdicas e supervisão para os mais pequenos.</p>
+                        <ul class="facility-details-list">
+                            <li><i class="fa-regular fa-clock"></i> Sáb/Dom: 10:00 - 18:00</li>
+                            <li><i class="fa-solid fa-location-dot"></i> Jardim Exterior</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer metal:fill-slot="main-footer"></footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>

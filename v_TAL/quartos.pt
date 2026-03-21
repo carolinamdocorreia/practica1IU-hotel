@@ -1,0 +1,101 @@
+<html metal:use-macro="load: base.pt">
+<head>
+    <metal:css fill-slot="extra_css">
+        <link rel="stylesheet" href="style_quartos.css" />
+    </metal:css>
+</head>
+<body>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
+    </header>
+
+    <main metal:fill-slot="main">
+        <div class="rooms-container">
+            
+            <div class="rooms-header-content">
+                <div>
+                    <h1 style="color: var(--navy); font-size: 32px;">Nossos Quartos</h1>
+                    <p style="color: var(--gray-text); font-size: 14px; margin-top: 5px;">A elegância encontra o descanso absoluto.</p>
+                </div>
+                <div style="color: var(--navy); cursor: pointer;"><i class="fa-solid fa-sliders"></i></div>
+            </div>
+
+            <section class="filter-section">
+                <div class="filter-chip active">Todos os Quartos</div>
+                <div class="filter-chip">Suítes Deluxe</div>
+                <div class="filter-chip">Vista Mar</div>
+                <div class="filter-chip">Executivos</div>
+                <div class="filter-chip">Familiar</div>
+            </section>
+
+            <div class="rooms-grid">
+                
+                <div class="room-card">
+                    <span class="room-status-badge status-available">Disponível</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Royal Ocean Suite</h3>
+                            <div class="room-price">
+                                <span class="price-value">450€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Vista panorâmica para o Atlântico com terraço privado e acabamentos em mármore.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 65m²</span>
+                            <span><i class="fa-solid fa-bed"></i> King Size</span>
+                            <span><i class="fa-solid fa-wifi"></i> Grátis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <span class="room-status-badge status-busy">Ocupado</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Executive Garden</h3>
+                            <div class="room-price">
+                                <span class="price-value">280€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Tranquilidade absoluta com acesso direto aos jardins botânicos privativos do hotel.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 40m²</span>
+                            <span><i class="fa-solid fa-bed"></i> Queen Size</span>
+                            <span><i class="fa-solid fa-mug-hot"></i> Nespresso</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" style="opacity: 0.8;">
+                    <span class="room-status-badge status-maintenance">Manutenção</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Classic Urban</h3>
+                            <div class="room-price">
+                                <span class="price-value">195€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Design contemporâneo inspirado no charme histórico da cidade de Lisboa.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 30m²</span>
+                            <span><i class="fa-solid fa-wifi"></i> Grátis</span>
+                            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer metal:fill-slot="main-footer"></footer>
+
+    <script src="auth.js"></script>
+</body>
+</html>

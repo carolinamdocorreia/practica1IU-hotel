@@ -1,12 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      metal:define-macro="master"
       lang="ca">
 
 <head>
     <meta charset="UTF-8" />
-    <title>${titol}</title>
+    <title>Lumina Grand Hotel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 
@@ -14,12 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    <metal:extra-css define-slot="extra_css">
-    </metal:extra-css>
+    
+    
 </head>
 
 <body>
-    <header metal:define-slot="header" class="main-header">
+    <header class="main-header">
         <div class="header-container">
             <a href="index.html" class="logo-wrapper">
                 <img src="logotipohotel.png" alt="Lumina Logo" class="header-logo-img">
@@ -51,11 +48,11 @@
         </div>
     </header>
 
-    <main metal:define-slot="main">
+    <main>
         Contingut per defecte
     </main>
 
-    <footer metal:define-slot="footer" class="main-footer">
+    <footer class="main-footer">
         <div class="footer-container">
             <div class="footer-section">
                 <div class="footer-logo-box">
@@ -88,6 +85,6 @@
         </div>
     </footer>
 
-    <metal:extra-js define-slot="extra_js"></metal:extra-js>
+    
 </body>
 </html>

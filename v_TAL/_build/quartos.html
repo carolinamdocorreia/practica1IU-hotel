@@ -1,0 +1,172 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="ca">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lumina Grand Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+        <link rel="stylesheet" href="style_quartos.css" />
+    
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="logotipohotel.png" alt="Lumina Logo" class="header-logo-img">
+                <span class="logo-text">LUMINA</span>
+            </a>
+        
+            <nav class="nav-desktop">
+                    <a href="index.html" class="active">INICIO</a>
+                    <a href="quartos.html">HABTIACIONS</a>
+                    <a href="instalacions.html">INSTALACIONS</a>
+                    <a href="login.html" class="nav-login">LOGIN</a>
+                </nav>
+
+            <button type="button" class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="mainnav-ul" class="mobile-menu" style="display:none;">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="quartos.html">HABITACIONS</a></li>
+                <li><a href="instalacions.html">INSTALACIONS</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+            <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mainnav-ul');
+                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            }
+            </script>
+        </div>
+    </header>
+
+    <main>
+        <div class="rooms-container">
+            
+            <div class="rooms-header-content">
+                <div>
+                    <h1 style="color: var(--navy); font-size: 32px;">Nossos Quartos</h1>
+                    <p style="color: var(--gray-text); font-size: 14px; margin-top: 5px;">A elegância encontra o descanso absoluto.</p>
+                </div>
+                <div style="color: var(--navy); cursor: pointer;"><i class="fa-solid fa-sliders"></i></div>
+            </div>
+
+            <section class="filter-section">
+                <div class="filter-chip active">Todos os Quartos</div>
+                <div class="filter-chip">Suítes Deluxe</div>
+                <div class="filter-chip">Vista Mar</div>
+                <div class="filter-chip">Executivos</div>
+                <div class="filter-chip">Familiar</div>
+            </section>
+
+            <div class="rooms-grid">
+                
+                <div class="room-card">
+                    <span class="room-status-badge status-available">Disponível</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Royal Ocean Suite</h3>
+                            <div class="room-price">
+                                <span class="price-value">450€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Vista panorâmica para o Atlântico com terraço privado e acabamentos em mármore.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 65m²</span>
+                            <span><i class="fa-solid fa-bed"></i> King Size</span>
+                            <span><i class="fa-solid fa-wifi"></i> Grátis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card">
+                    <span class="room-status-badge status-busy">Ocupado</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Executive Garden</h3>
+                            <div class="room-price">
+                                <span class="price-value">280€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Tranquilidade absoluta com acesso direto aos jardins botânicos privativos do hotel.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 40m²</span>
+                            <span><i class="fa-solid fa-bed"></i> Queen Size</span>
+                            <span><i class="fa-solid fa-mug-hot"></i> Nespresso</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="room-card" style="opacity: 0.8;">
+                    <span class="room-status-badge status-maintenance">Manutenção</span>
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="room-content">
+                        <div class="room-header">
+                            <h3 class="room-title">Classic Urban</h3>
+                            <div class="room-price">
+                                <span class="price-value">195€</span>
+                                <span class="price-unit">/ noite</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Design contemporâneo inspirado no charme histórico da cidade de Lisboa.</p>
+                        <div class="room-features">
+                            <span><i class="fa-solid fa-maximize"></i> 30m²</span>
+                            <span><i class="fa-solid fa-wifi"></i> Grátis</span>
+                            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo-box">
+                    <img src="logotipohotel.png" alt="Lumina Logo" class="footer-logo-img">
+                    <h4 style="margin-top: 10px;">Lumina Grand Hotel</h4>
+                </div>
+                <p><i class="fa-solid fa-phone"></i> +351 210 000 000</p>
+                <p><i class="fa-solid fa-envelope"></i> reservas@lumina.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Termos e Condições</a>
+                <a href="#">Privacidade</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2026 Lumina Grand Hotel. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,220 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="ca">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lumina Grand Hotel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-wrapper">
+                <img src="logotipohotel.png" alt="Lumina Logo" class="header-logo-img">
+                <span class="logo-text">LUMINA</span>
+            </a>
+        
+            <nav class="nav-desktop">
+                    <a href="index.html" class="active">INICIO</a>
+                    <a href="quartos.html">HABTIACIONS</a>
+                    <a href="instalacions.html">INSTALACIONS</a>
+                    <a href="login.html" class="nav-login">LOGIN</a>
+                </nav>
+
+            <button type="button" class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="mainnav-ul" class="mobile-menu" style="display:none;">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="quartos.html">HABITACIONS</a></li>
+                <li><a href="instalacions.html">INSTALACIONS</a></li>
+                <li><a href="login.html">LOGIN</a></li>
+            </ul>
+            <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mainnav-ul');
+                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            }
+            </script>
+        </div>
+    </header>
+
+    <main>        
+        <section class="hero-premium">
+            <div class="hero-overlay-center">
+                <span class="badge badge-gold">The Art of Luxury</span>
+                <h1 class="hero-logo-title">LUMINA GRAND HOTEL</h1>
+                <p>Onde o requinte encontra o horizonte em Cascais.</p>
+            </div>
+        </section>
+
+        <section class="offers-section">
+            <div class="header-container">
+                <div class="section-intro" style="text-align: center; margin-bottom: 40px;">
+                    <span class="badge badge-gold">Serviços Exclusivos</span>
+                    <h2 class="section-title">Experiências de Temporada</h2>
+                    <p style="color: var(--gray-text);">Clique nos cartões para descobrir os detalhes de cada programa.</p>
+                </div>
+
+                <div class="offers-grid horizontal-layout">
+                    
+                    <div class="offer-room-style clickable-card" onclick="this.classList.toggle('active')">
+                        <div class="offer-img-box">
+                            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Pack Romântico">
+                        </div>
+                        <div class="offer-details">
+                            <span class="offer-category">Romance</span>
+                            <h3>Pack Romântico</h3>
+                            
+                            <div class="offer-description">
+                                <p class="short-desc">Espumante e jantar à luz das velas na suite.</p>
+                                
+                                <div class="full-info-box">
+                                    <p class="full-desc">Uma noite desenhada para o amor. Inclui decoração personalizada com pétalas de rosa, uma garrafa de espumante premium à chegada e um menu de degustação de 3 pratos servido privadamente no seu quarto.</p>
+                                    <ul class="offer-specs">
+                                        <li><i class="fa-regular fa-clock"></i> <strong>Horário:</strong> Sob reserva (Jantar às 20h00)</li>
+                                        <li><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Suite Privada</li>
+                                        <li><i class="fa-solid fa-euro-sign"></i> <strong>Custo:</strong> 80€ por casal</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="offer-footer">
+                                <span class="price-tag">80€</span>
+                                <span class="btn-text">Saber Mais <i class="fa-solid fa-plus"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-room-style clickable-card" onclick="this.classList.toggle('active')">
+                        <div class="offer-img-box">
+                            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=80" alt="Karaoke">
+                        </div>
+                        <div class="offer-details">
+                            <span class="offer-category">Lazer</span>
+                            <h3>Noite de Karaoke</h3>
+                            
+                            <div class="offer-description">
+                                <p class="short-desc">Sextas-feiras animadas no nosso Lounge Bar.</p>
+                                
+                                <div class="full-info-box">
+                                    <p class="full-desc">Liberte a sua voz no palco do Lumina! Uma noite descontraída com sistema de som de alta fidelidade, lista de músicas internacionais e cocktails de assinatura com desconto para participantes.</p>
+                                    <ul class="offer-specs">
+                                        <li><i class="fa-regular fa-clock"></i> <strong>Horário:</strong> Sextas, 21h30 - 01h00</li>
+                                        <li><i class="fa-solid fa-location-dot"></i> <strong>Local:</strong> Blue Horizon Lounge</li>
+                                        <li><i class="fa-solid fa-euro-sign"></i> <strong>Custo:</strong> Entrada Gratuita</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="offer-footer">
+                                <span class="price-tag">Grátis</span>
+                                <span class="btn-text">Saber Mais <i class="fa-solid fa-plus"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="offer-room-style clickable-card" onclick="this.classList.toggle('active')">
+                        <div class="offer-img-box">
+                            <img src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=600&q=80" alt="Cavalo">
+                        </div>
+                        <div class="offer-details">
+                            <span class="offer-category">Aventura</span>
+                            <h3>Passeio a Cavalo</h3>
+                            
+                            <div class="offer-description">
+                                <p class="short-desc">Exploração guiada pelas dunas e praias de Cascais.</p>
+                                
+                                <div class="full-info-box">
+                                    <p class="full-desc">Sinta a brisa do mar enquanto cavalga pela areia. Experiência adaptada para iniciantes ou cavaleiros experientes, com cavalos lusitanos treinados e guia profissional.</p>
+                                    <ul class="offer-specs">
+                                        <li><i class="fa-regular fa-clock"></i> <strong>Duração:</strong> 1h30 (Saídas às 10h e 16h)</li>
+                                        <li><i class="fa-solid fa-location-dot"></i> <strong>Encontro:</strong> Receção do Centro Hípico</li>
+                                        <li><i class="fa-solid fa-euro-sign"></i> <strong>Custo:</strong> 65€ por pessoa</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="offer-footer">
+                                <span class="price-tag">65€</span>
+                                <span class="btn-text">Saber Mais <i class="fa-solid fa-plus"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="location-section">
+            <div class="header-container">
+                <div class="location-content" style="text-align: center; margin-bottom: 30px;">
+                    <span class="badge badge-gold">Onde Estamos</span>
+                    <h2 class="section-title">Localização Privilegiada</h2>
+                    <p class="location-address">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        Av. Rei Humberto II de Itália, Cascais, Portugal
+                    </p>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12457.14371900223!2d-9.429712!3d38.691763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ec44238e55555%3A0x500ebb3233f0a50!2sCascais!5e0!3m2!1spt-PT!2spt!4v1700000000000!5m2!1spt-PT!2spt" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0; border-radius: 15px; box-shadow: var(--shadow-md);" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo-box">
+                    <img src="logotipohotel.png" alt="Lumina Logo" class="footer-logo-img">
+                    <h4 style="margin-top: 10px;">Lumina Grand Hotel</h4>
+                </div>
+                <p><i class="fa-solid fa-phone"></i> +351 210 000 000</p>
+                <p><i class="fa-solid fa-envelope"></i> reservas@lumina.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Links Úteis</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Termos e Condições</a>
+                <a href="#">Privacidade</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2026 Lumina Grand Hotel. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    
+</body>
+</html>

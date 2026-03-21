@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina Grand Hotel | Experiência 5 Estrelas</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
+<html metal:use-macro="load: base.pt">
+<head></head>
 <body>
-    <header class="main-header">
-        <div class="header-container">
-            <a href="index.html" class="logo-wrapper">
-                <img src="logotipohotel.png" alt="Lumina Logo" class="header-logo-img">
-                <span class="logo-text">LUMINA</span>
-            </a>
-            
-            <nav class="nav-desktop">
-                <a href="index.html" class="active">Início</a>
-                <a href="quartos.html">Quartos</a>
-                <a href="instalacoes.html">Instalações</a>
-                <a href="perfil_client.html">O Meu Perfil</a> 
-                <a href="login.html" class="nav-login">Login</a>
-            </nav>
-
-            <button class="mobile-menu-btn">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
     </header>
 
-    <main class="page-content">
-        
+    <main metal:fill-slot="main">        
         <section class="hero-premium">
             <div class="hero-overlay-center">
                 <span class="badge badge-gold">The Art of Luxury</span>
@@ -167,45 +139,7 @@
 
     </main>
 
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <div class="footer-logo-box">
-                    <img src="logotipohotel.png" alt="Lumina Logo" class="footer-logo-img">
-                    <h4 style="margin-top: 10px;">Lumina Grand Hotel</h4>
-                </div>
-                <p><i class="fa-solid fa-phone"></i> +351 210 000 000</p>
-                <p><i class="fa-solid fa-envelope"></i> reservas@lumina.com</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Links Úteis</h4>
-                <a href="#">FAQ</a>
-                <a href="#">Termos e Condições</a>
-                <a href="#">Privacidade</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>Siga-nos</h4>
-                <div class="social-links">
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            © 2026 Lumina Grand Hotel. Todos os direitos reservados.
-        </div>
-    </footer>
-
-    <nav class="mobile-bottom-nav">
-        <a href="index.html" class="active"><i class="fa-solid fa-house"></i></a>
-        <a href="quartos.html"><i class="fa-solid fa-bed"></i></a>
-        <a href="instalacoes.html"><i class="fa-solid fa-bell-concierge"></i></a>
-        <a href="perfil.html"><i class="fa-solid fa-user"></i></a>
-    </nav>
+    <footer metal:fill-slot="main-footer"></footer>
 
     <script src="auth.js"></script>
 </body>
