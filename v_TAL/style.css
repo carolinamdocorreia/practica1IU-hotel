@@ -82,10 +82,15 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 8px;
 }
 
+.header-container-base {width: 95%;}
 .header-container {
     width: 90%; max-width: var(--max-width);
     margin: 0 auto; display: flex;
-    justify-content: space-between; align-items: center;
+    justify-content: space-between; 
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .logo-wrapper { display: flex; align-items: center; gap: 12px; }
@@ -115,7 +120,7 @@ img { max-width: 100%; height: auto; display: block; }
     right: 20px;
     background: var(--navy);
     list-style: none;
-    margin: 5;
+    margin: 23px;
     padding: 12px 0;
     width: 90%;
     max-width: 400px;
@@ -126,7 +131,7 @@ img { max-width: 100%; height: auto; display: block; }
     display: block;
     color: var(--white);
     text-decoration: none;
-    padding: 12px 20px 12px 30px;  /* top right bottom left */
+    padding: 12px 20px 12px 30px;  
 }
 
 /* 5. HERO SECTION */
@@ -146,7 +151,11 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* 6. OFERTAS E QUARTOS (Home) */
-.offers-section { padding: var(--s5) 0; }
+.offers-section { 
+    padding: var(--s5) 0; 
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;}
 
 .offers-grid.horizontal-layout {
     display: flex; overflow-x: auto; gap: var(--s3);
@@ -286,8 +295,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* 10. MEDIA QUERIES (Responsividade) */
 @media (max-width: 992px) {
-    .nav-desktop { display: none; }
-    .mobile-menu-btn { display: block; }
+    .nav-desktop { display: none; margin-left: auto;}
+    .mobile-menu-btn { display: block; margin-left: auto; }
     
     .mobile-bottom-nav {
         display: flex; position: fixed; bottom: 0; width: 100%; height: 65px;
