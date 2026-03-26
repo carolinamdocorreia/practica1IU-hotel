@@ -10,10 +10,11 @@
     </header>
 
     <main metal:fill-slot="main">
-               
+
+        div.w3-       
         <div class="profile-header-large">
             <div class="profile-avatar-edit">
-                <img src="https://i.pravatar.cc/150?img=11" class="avatar-img" alt="Foto de Perfil">
+                <img src="https://imagenes2.eltiempo.com/files/image_600_455/files/fp/uploads/2025/04/01/67ec4ef31f2ce.r_d.866-866-3464.jpeg" class="avatar-img" alt="Foto de Perfil">
                 <div class="edit-badge"><i class="fa-solid fa-camera"></i></div>
             </div>
             <h2 id="nomePerfil" style="font-size: 24px;">Carregando...</h2>
@@ -21,7 +22,6 @@
         </div>
 
         <div class="profile-container">
-            
             <div class="loyalty-card">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                     <div>
@@ -35,34 +35,43 @@
                 </div>
                 <p style="font-size: 11px; margin-top: 10px; opacity: 0.7;">Faltam 2,550 pontos para o nível Platinum</p>
             </div>
+            
+            <div class="w3-grid">
+            <div class="w3-thrid">
+                <p class="section-title">MI CUENTA</p>
+                <div class="menu-group">
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-user-gear"></i>
+                        <span>Datos Personales</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        <span>Mis Reservas</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
 
-            <p class="section-title">A Minha Conta</p>
-            <div class="menu-group">
-                <a href="#" class="menu-item">
-                    <i class="fa-solid fa-user-gear"></i>
-                    <span>Dados Pessoais</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-                <a href="#" class="menu-item">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    <span>Histórico de Reservas</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-            </div>
 
-            <p class="section-title">Preferências e Segurança</p>
-            <div class="menu-group">
-                <a href="#" class="menu-item">
-                    <i class="fa-solid fa-bell"></i>
-                    <span>Notificações</span>
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-                <a onclick="terminarSessao()" class="menu-item logout-btn">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <span>Terminar Sessão</span>
-                </a>
-            </div>
-        </div>
+                <p class="section-title">Configuración</p>
+                    <div class="menu-group">
+                        <a href="#" class="menu-item">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>Notificaciones</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                    <a onclick="terminarSessao()" class="menu-item logout-btn">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Cerrar Sessión</span>
+                    </a>
+                    </div>
+                </div>
+                </div>
+
+                <div class="w3-twothrid">
+                <p class="hola">holaaaaa</p>
+                </div>
+
     </main>
         
     <footer metal:fill-slot="main-footer"></footer>

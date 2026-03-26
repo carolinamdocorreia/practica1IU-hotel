@@ -7,6 +7,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>${titol}</title>
+    <link rel="icon" sizes="32x32" href="logotipohotel.png">
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
 
@@ -67,10 +69,17 @@
             </div>
             
             <div class="footer-section">
+<<<<<<< HEAD
                 <h4>Enlaces Útiles</h4>
                 <a href="#">FAQ</a>
                 <a href="#">Términos y Condiciones</a>
                 <a href="#">Privacidad</a>
+=======
+                <h4>LINKS ÚTILES</h4>
+                <a href="#">FAQ</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Privacidade</a>
+>>>>>>> 9710fc88fd19c220709afc0c78e905dd2889c472
             </div>
 
             <div class="footer-section">
