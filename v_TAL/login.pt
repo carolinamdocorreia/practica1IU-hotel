@@ -11,25 +11,25 @@
 
     <main metal:fill-slot="main">
        <div class="login-card">
-            <span class="badge badge-gold">Bem-vindo de volta</span>
-            <h2>Aceder à sua conta</h2>
+            <span class="badge badge-gold">Bienvenido de nuevo</span>
+            <h2>Acceder a su cuenta</h2>
             
             <form class="login-form" id="loginForm" onsubmit="event.preventDefault(); fazerLogin(document.getElementById('email').value);"> 
                 
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="exemplo@email.com" required>
+                    <input type="email" id="email" placeholder="ejemplo@email.com" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Palavra-passe</label>
+                    <label for="password">Contraseña</label>
                     <div class="password-container">
                         <input type="password" id="password" placeholder="••••••••" required minlength="5">
                         <button type="button" id="togglePassword" class="toggle-btn">
                             <i class="fa-solid fa-eye" id="eyeIcon"></i>
                         </button>
                     </div>
-                    <span class="validation-hint">A palavra-passe deve ter no mínimo 5 caracteres.</span>
+                    <span class="validation-hint">La contraseña debe tener al menos 5 caracteres.</span>
                 </div>
 
                 <button type="submit" class="btn-primary" style="width: 100%; margin-top: 10px;">
@@ -38,19 +38,18 @@
             </form>
             
             <p style="margin-top: 25px; font-size: 13px; color: var(--gray-text);">
-                Ainda não tem conta? 
-                <a href="registo.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Registe-se aqui</a>
+                ¿Aún no tienes cuenta? 
+                <a href="registo.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
             </p>
         </div>
     </main>
         
     <footer metal:fill-slot="main-footer"></footer>
 
-
     <metal:css fill-slot="extra_js">
         <script src="auth.js"></script>
-            <script>
-        // Lógica visual para mostrar/esconder a password
+        <script>
+        // Lógica visual para mostrar/esconder la contraseña
         const togglePassword = document.querySelector('#togglePassword');
         const passwordField = document.querySelector('#password');
         const eyeIcon = document.querySelector('#eyeIcon');
@@ -61,7 +60,7 @@
             eyeIcon.classList.toggle('fa-eye');
             eyeIcon.classList.toggle('fa-eye-slash');
         });
-    </script>
+        </script>
     </metal:css>
     
 </body>

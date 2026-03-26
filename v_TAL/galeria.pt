@@ -1,0 +1,37 @@
+<html metal:use-macro="load: base.pt">
+<head></head>
+<body>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
+    </header>
+
+
+ <header metal:fill-slot="main-header"></header>
+
+  <div class="button">
+    <button onclick="filtrar('todas')">Totes</button>
+    <button onclick="filtrar('habitacion')">Habitacions</button>
+    
+    <button onclick="filtrar('lobby')">Lobby</button>
+  </div>
+
+  <div class="grid">
+
+    <img class="habitacion" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Habitació">
+
+    <img class="habitacion" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Habitació">
+
+    <img class="lobby" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Lobby">
+
+    <img class="piscina" src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Piscina">
+
+  </div>
+</section>
+
+<div id="lightbox" onclick="cerrar()">
+  <img id="img-grande">
+</div>
+
+<script src="galeria.js"></script>
+</body>
+</html>
