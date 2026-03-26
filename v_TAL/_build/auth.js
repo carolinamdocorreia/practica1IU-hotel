@@ -1,74 +1,109 @@
-/**
- * SISTEMA DE AUTENTICAÇÃO - LUMINA GRAND HOTEL
- * Centraliza login, logout e verificação de sessão.
- */
+// Função para simular o login
 
-// 1. GESTÃO DE INTERFACE (Executa em todas as páginas)
-document.addEventListener('DOMContentLoaded', () => {
-    const nomeUsuario = localStorage.getItem('usuarioLogado');
+function fazerLogin(email) {
+
+    // Extrai o nome antes do @ para simular um nome de utilizador
+
+    const nomeUsuario = email.split('@')[0];
+
     
-    // Atualiza a saudação na Home (se o elemento existir)
-    const saudacaoHome = document.getElementById('boasVindasNome');
-    if (saudacaoHome && nomeUsuario) {
-        saudacaoHome.textContent = nomeUsuario;
+
+    // Guarda no navegador que o utilizador está logado
+
+    localStorage.setItem('usuarioLogado', 'true');
+
+    localStorage.setItem('nomeUsuario', nomeUsuario);
+
+    
+
+    // Redireciona para o perfil
+
+    window.location.href = 'perfil_client.html';
+
+}
+
+
+
+// Função para verificar o estado do login e atualizar o Header
+
+function atualizarHeader() {
+
+    const logado = localStorage.getItem('usuarioLogado');
+
+    const navDesktop = document.querySelector('.nav-desktop');
+
+    const loginLink = document.querySelector('.nav-login');
+
+
+
+    if (logado === 'true' && loginLink) {
+
+        // Substitui o texto "LOGIN" pelo ícone de pessoa
+
+        loginLink.innerHTML = '<i class="fa-solid fa-user-circle"></i> PERFIL';
+
+        loginLink.href = 'perfil.html';
+
+        loginLink.classList.add('perfil-active');
+
     }
 
-    // Atualiza o nome no Perfil (se o elemento existir)
-    const nomePerfil = document.getElementById('nomePerfil');
-    if (nomePerfil) {
-        if (!nomeUsuario) {
-            window.location.href = 'login.html'; // Proteção de rota
-        } else {
-            nomePerfil.textContent = nomeUsuario;
+}
+
+
+
+// Função para Terminar Sessão
+
+function logout() {
+
+    localStorage.removeItem('usuarioLogado');
+
+    localStorage.removeItem('nomeUsuario');
+
+    localStorage.removeItem('fotoPerfil'); // Remove a foto se houver
+
+    window.location.href = 'index.html';
+
+}
+
+
+
+// Executa ao carregar qualquer página
+
+document.addEventListener('DOMContentLoaded', atualizarHeader);
+
+// --- LOGIN ---
+function fazerLogin(email) {
+    // Simulação de login bem-sucedido (tu podes adaptar para validar com BD)
+    const userData = {
+        email: email,
+        isLogged: true
+    };
+
+    // Guardar dados enquanto a sessão estiver ativa
+    sessionStorage.setItem("user", JSON.stringify(userData));
+
+    // Redirecionar para a página inicial ou dashboard
+    window.location.href = "index.html";
+}
+
+// --- VERIFICAR LOGIN NA PÁGINA ---
+function verificarLogin() {
+    const user = sessionStorage.getItem("user");
+
+    if (user) {
+        const dados = JSON.parse(user);
+        const loginLink = document.querySelector(".nav-login");
+
+        if (loginLink) {
+            loginLink.innerHTML = `<i class="fa-solid fa-user"></i> ${dados.email}`;
+            loginLink.href = "#";
         }
     }
-
-    // Gerir visibilidade do formulário de login (apenas na login.html)
-    const loginForm = document.querySelector('#loginForm');
-    if (loginForm) {
-        configurarFormularioLogin(loginForm);
-    }
-});
-
-// 2. FUNÇÕES CORE
-function fazerLogin(email) {
-    // Extrai o nome antes do @ (ex: ricardo.oliveira@gmail.com -> Ricardo)
-    let nomeRaw = email.split('@')[0].split('.')[0];
-    let nomeFormatado = nomeRaw.charAt(0).toUpperCase() + nomeRaw.slice(1);
-
-    localStorage.setItem('usuarioLogado', nomeFormatado);
-    localStorage.setItem('emailLogado', email);
-    
-    // Redireciona para o perfil após sucesso
-    window.location.href = 'perfil_client.html';
 }
 
-function terminarSessao() {
-    localStorage.removeItem('usuarioLogado');
-    localStorage.removeItem('emailLogado');
-    window.location.href = 'index.html';
-}
-
-// 3. CONFIGURAÇÃO DO FORMULÁRIO (Event Listeners)
-function configurarFormularioLogin(form) {
-    const togglePassword = document.querySelector('#togglePassword');
-    const passwordField = document.querySelector('#password');
-    const eyeIcon = document.querySelector('#eyeIcon');
-
-    // Mostrar/Esconder password
-    if (togglePassword) {
-        togglePassword.addEventListener('click', () => {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            eyeIcon.classList.toggle('fa-eye');
-            eyeIcon.classList.toggle('fa-eye-slash');
-        });
-    }
-
-    // Capturar o Submit
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Impede o recarregamento real da página
-        const emailValue = document.querySelector('#email').value;
-        fazerLogin(emailValue);
-    });
+// --- LOGOUT ---
+function fazerLogout() {
+    sessionStorage.removeItem("user");
+    window.location.href = "index.html";
 }
