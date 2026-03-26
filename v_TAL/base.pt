@@ -30,8 +30,9 @@
         
             <nav class="nav-desktop">
                     <a href="index.html" class="active">INICIO</a>
-                    <a href="quartos.html">HABITACIONES</a>
-                    <a href="instalacions.html">INSTALACIONES</a>
+                    <a href="quartos.html">HABTIACIONS</a>
+                    <a href="instalacions.html">INSTALACIONS</a>
+                    <a href="galeria.html">GALERIA</a>
                     <a href="login.html" class="nav-login">LOGIN</a>
                 </nav>
 
@@ -69,17 +70,10 @@
             </div>
             
             <div class="footer-section">
-<<<<<<< HEAD
-                <h4>Enlaces Útiles</h4>
-                <a href="#">FAQ</a>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Privacidad</a>
-=======
                 <h4>LINKS ÚTILES</h4>
                 <a href="#">FAQ</a>
                 <a href="#">Términos y condiciones</a>
                 <a href="#">Privacidade</a>
->>>>>>> 9710fc88fd19c220709afc0c78e905dd2889c472
             </div>
 
             <div class="footer-section">
