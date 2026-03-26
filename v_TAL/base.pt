@@ -28,8 +28,8 @@
         
             <nav class="nav-desktop">
                     <a href="index.html" class="active">INICIO</a>
-                    <a href="quartos.html">HABTIACIONS</a>
-                    <a href="instalacions.html">INSTALACIONS</a>
+                    <a href="quartos.html">HABITACIONES</a>
+                    <a href="instalacions.html">INSTALACIONES</a>
                     <a href="login.html" class="nav-login">LOGIN</a>
                 </nav>
 
@@ -38,8 +38,8 @@
             </button>
             <ul id="mainnav-ul" class="mobile-menu" style="display:none;">
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="quartos.html">HABITACIONS</a></li>
-                <li><a href="instalacions.html">INSTALACIONS</a></li>
+                <li><a href="quartos.html">HABITACIONES</a></li>
+                <li><a href="instalacions.html">INSTALACIONES</a></li>
                 <li><a href="login.html">LOGIN</a></li>
             </ul>
             <script>
@@ -52,7 +52,7 @@
     </header>
 
     <main metal:define-slot="main">
-        Contingut per defecte
+        Contenido por defecto
     </main>
 
     <footer metal:define-slot="footer" class="main-footer">
@@ -67,14 +67,14 @@
             </div>
             
             <div class="footer-section">
-                <h4>Links Úteis</h4>
+                <h4>Enlaces Útiles</h4>
                 <a href="#">FAQ</a>
-                <a href="#">Termos e Condições</a>
-                <a href="#">Privacidade</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Privacidad</a>
             </div>
 
             <div class="footer-section">
-                <h4>Siga-nos</h4>
+                <h4>Síguenos</h4>
                 <div class="social-links">
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -84,7 +84,7 @@
         </div>
         
         <div class="footer-bottom">
-            © 2026 Lumina Grand Hotel. Todos os direitos reservados.
+            © 2026 Lumina Grand Hotel. Todos los derechos reservados.
         </div>
     </footer>
 
