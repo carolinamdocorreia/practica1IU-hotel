@@ -50,7 +50,7 @@
                 <li><a href="quartos.html">HABITACIONES</a></li>
                 <li><a href="instalacions.html">INSTALACIONES</a></li>
                 <li><a href="galeria.html">GALERIA</a></li>
-                <li><a href="login.html">LOGIN</a></li>
+                <li><a href="login.html" class="nav-login-mobile">LOGIN</a></li>
             </ul>
             <script>
             function toggleMenu() {
@@ -78,9 +78,11 @@
             
             <div class="footer-section">
                 <h4>LINKS ÚTILES</h4>
-                <a href="#">FAQ</a>
-                <a href="#">Términos y condiciones</a>
-                <a href="#">Privacidade</a>
+            <ul style="list-style: none;">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Privacidad</a></li>
+                </ul>
             </div>
 
             <div class="footer-section">
