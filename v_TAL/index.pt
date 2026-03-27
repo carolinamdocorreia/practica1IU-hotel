@@ -140,6 +140,5 @@
 
     <footer metal:fill-slot="main-footer"></footer>
 
-    <script src="auth.js"></script>
 </body>
 </html>

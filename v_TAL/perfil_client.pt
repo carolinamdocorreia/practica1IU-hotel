@@ -128,10 +128,7 @@
     <footer metal:fill-slot="main-footer"></footer>
 
     <metal:css fill-slot="extra_js">
-        <script src="auth.js"></script>
         <script>
-            verificarAcesso();
-
             function mostrarSeccio(seccio) {
                 const totes = document.querySelectorAll('.seccio-contingut');
 

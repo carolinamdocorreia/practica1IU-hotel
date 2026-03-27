@@ -1,45 +1,76 @@
 /**
- * SISTEMA DE AUTENTICAÇÃO - LUMINA GRAND HOTEL
- * Centraliza login, logout e verificação de sessão.
+ * SISTEMA DE AUTENTICACIÓN - LUMINA GRAND HOTEL
  */
 
-// 1. GESTÃO DE INTERFACE (Executa em todas as páginas)
 document.addEventListener('DOMContentLoaded', () => {
     const nomeUsuario = localStorage.getItem('usuarioLogado');
-    
-    // Atualiza a saudação na Home (se o elemento existir)
+    const emailUsuario = localStorage.getItem('emailLogado');
+
+    /* HOME */
     const saudacaoHome = document.getElementById('boasVindasNome');
     if (saudacaoHome && nomeUsuario) {
         saudacaoHome.textContent = nomeUsuario;
     }
 
-    // Atualiza o nome no Perfil (se o elemento existir)
+    /* NAV DESKTOP */
+    const navLogin = document.querySelector('.nav-login');
+    if (navLogin) {
+        if (nomeUsuario) {
+            navLogin.textContent = 'MI CUENTA';
+            navLogin.href = 'perfil_client.html';
+        } else {
+            navLogin.textContent = 'LOGIN';
+            navLogin.href = 'login.html';
+        }
+    }
+
+    /* NAV MOBILE */
+    const navLoginMobile = document.querySelector('.nav-login-mobile');
+    if (navLoginMobile) {
+        if (nomeUsuario) {
+            navLoginMobile.textContent = 'MI CUENTA';
+            navLoginMobile.href = 'perfil_client.html';
+        } else {
+            navLoginMobile.textContent = 'LOGIN';
+            navLoginMobile.href = 'login.html';
+        }
+    }
+
+    /* PERFIL */
     const nomePerfil = document.getElementById('nomePerfil');
     if (nomePerfil) {
         if (!nomeUsuario) {
-            window.location.href = 'login.html'; // Proteção de rota
+            window.location.href = 'login.html';
+            return;
         } else {
             nomePerfil.textContent = nomeUsuario;
         }
     }
 
-    // Gerir visibilidade do formulário de login (apenas na login.html)
-    const loginForm = document.querySelector('#loginForm');
+    const nomePerfilInput = document.getElementById('nomePerfilInput');
+    if (nomePerfilInput && nomeUsuario) {
+        nomePerfilInput.value = nomeUsuario;
+    }
+
+    const emailUsuari = document.getElementById('emailUsuari');
+    if (emailUsuari && emailUsuario) {
+        emailUsuari.value = emailUsuario;
+    }
+
+    /* LOGIN FORM */
+    const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         configurarFormularioLogin(loginForm);
     }
 });
 
-// 2. FUNÇÕES CORE
 function fazerLogin(email) {
-    // Extrai o nome antes do @ (ex: ricardo.oliveira@gmail.com -> Ricardo)
     let nomeRaw = email.split('@')[0].split('.')[0];
     let nomeFormatado = nomeRaw.charAt(0).toUpperCase() + nomeRaw.slice(1);
 
     localStorage.setItem('usuarioLogado', nomeFormatado);
     localStorage.setItem('emailLogado', email);
-    
-    // Redireciona para o perfil após sucesso
+
     window.location.href = 'perfil_client.html';
 }
 
@@ -49,14 +80,12 @@ function terminarSessao() {
     window.location.href = 'index.html';
 }
 
-// 3. CONFIGURAÇÃO DO FORMULÁRIO (Event Listeners)
 function configurarFormularioLogin(form) {
-    const togglePassword = document.querySelector('#togglePassword');
-    const passwordField = document.querySelector('#password');
-    const eyeIcon = document.querySelector('#eyeIcon');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordField = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
 
-    // Mostrar/Esconder password
-    if (togglePassword) {
+    if (togglePassword && passwordField && eyeIcon) {
         togglePassword.addEventListener('click', () => {
             const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordField.setAttribute('type', type);
@@ -65,10 +94,9 @@ function configurarFormularioLogin(form) {
         });
     }
 
-    // Capturar o Submit
     form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Impede o recarregamento real da página
-        const emailValue = document.querySelector('#email').value;
+        e.preventDefault();
+        const emailValue = document.getElementById('email').value;
         fazerLogin(emailValue);
     });
 }

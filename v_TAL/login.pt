@@ -47,7 +47,6 @@
     <footer metal:fill-slot="main-footer"></footer>
 
     <metal:css fill-slot="extra_js">
-        <script src="auth.js"></script>
         <script>
         const togglePassword = document.querySelector('#togglePassword');
         const passwordField = document.querySelector('#password');
