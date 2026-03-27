@@ -57,24 +57,24 @@
                     <div class="w3-row">
                         <div class="w3-half w3-container">
                             <label class="apartat" for="nomePerfilInput">NOMBRE</label>
-                            <input type="text" class="valor" id="nomePerfilInput" name="usuari_name" readonly value="NOM">
+                            <input type="text" class="valor" id="nomePerfilInput" name="usuari_name"  value="NOM">
                         </div>
 
                         <div class="w3-half w3-container">
                             <label class="apartat" for="cognomUsuari">APELLIDOS</label>
-                            <input type="text" class="valor" id="cognomUsuari" name="usuari_surname" readonly value="COGNOM1 COGNOM2">
+                            <input type="text" class="valor" id="cognomUsuari" name="usuari_surname" value="COGNOM1 COGNOM2">
                         </div>
                     </div>
 
                     <div class="w3-row">
                         <div class="w3-half w3-container">
                             <label class="apartat" for="emailUsuari">EMAIL</label>
-                            <input type="text" class="valor" id="emailUsuari" readonly value="email@gmail.com">
+                            <input type="text" class="valor" id="emailUsuari"  value="email@gmail.com">
                         </div>
 
                         <div class="w3-half w3-container">
                             <label class="apartat" for="dniUsuari">Documento de Identidad</label>
-                            <input type="text" class="valor" id="dniUsuari" name="usuari_dni" readonly value="1234567A">
+                            <input type="text" class="valor" id="dniUsuari" name="usuari_dni"  value="1234567A">
                         </div>
                     </div>
 
