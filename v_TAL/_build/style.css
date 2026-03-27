@@ -106,10 +106,21 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 10px 20px; border-radius: var(--radius-sm); font-weight: 700;
 }
 
+.reservar{
+    background: var(--white); color: var(--gold-hover) !important;
+    padding: 10px 20px; border-radius: var(--radius-sm); font-weight: 700;
+}
+
 .nav-login-mobile {
     font-weight: bold;
     color: var(--gold) !important;
 }
+
+.reservar-mobile {
+    font-weight: bold;
+    color: var(--gold) !important;
+}
+
 
 .mobile-menu-btn { background: none; border: none; color: var(--white); font-size: 24px; cursor: pointer; display: none; }
 

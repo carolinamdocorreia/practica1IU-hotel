@@ -1,0 +1,235 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      lang="ca">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Lumina Grand Hotel</title>
+    <link rel="icon" sizes="32x32" href="logotipohotel.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container-base">
+            <a href="index.html" class="logo-wrapper">
+                <img src="logotipohotel.png" alt="Lumina Logo" class="header-logo-img">
+                <span class="logo-text">LUMINA</span>
+            </a>
+        
+            <nav class="nav-desktop">
+                    <a href="index.html" class="active">INICIO</a>
+                    <a href="quartos.html">HABTIACIONS</a>
+                    <a href="instalacions.html">INSTALACIONS</a>
+                    <a href="galeria.html">GALERIA</a>
+                    <a href="reserves.html" class="reservar">RESERVAR</a>
+                    <a href="login.html" class="nav-login">LOGIN</a>
+                </nav>
+
+            <button type="button" class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul id="mainnav-ul" class="mobile-menu" style="display:none;">
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="quartos.html">HABITACIONES</a></li>
+                <li><a href="instalacions.html">INSTALACIONES</a></li>
+                <li><a href="galeria.html">GALERIA</a></li>
+                <li><a href="reserves.html" class="reservar-mobile">RESERVAR</a></li>
+                <li><a href="login.html" class="nav-login-mobile">LOGIN</a></li>
+            </ul>
+            <script>
+            function toggleMenu() {
+                const menu = document.getElementById('mainnav-ul');
+                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            }
+            </script>
+        </div>
+    </header>
+
+    <main>   
+
+<div class="login-card">
+
+    <h2>Reservar habitación</h2>
+
+    <form onsubmit="guardarReserva(event)">
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label>Habitación</label>
+            <select id="habitacion" onchange="actualizarPrecio()" required>
+                <option value="">Selecciona una habitación</option>
+                <option value="Royal Ocean Suite" data-precio="450">Royal Ocean Suite (450€/noche)</option>
+                <option value="Executive Garden" data-precio="280">Executive Garden (280€/noche)</option>
+                <option value="Classic Urban" data-precio="195">Classic Urban (195€/noche)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Precio por noche</label>
+            <input type="text" id="precio" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Fecha entrada</label>
+            <input type="text" id="entrada" required>
+        </div>
+
+        <div class="form-group">
+            <label>Fecha salida</label>
+            <input type="text" id="salida" required>
+        </div>
+
+        <div class="form-group">
+            <label>Total (€)</label>
+            <input type="text" id="total" readonly>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;">
+            Confirmar reserva
+        </button>
+
+    </form>
+
+    <div id="mensaje-exito" style="text-align: center; margin-top: 20px; color: #27ae60; font-weight: bold; display: none;">
+        Reserva confirmada
+    </div>
+
+</div>
+</main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo-box">
+                    <img src="logotipohotel.png" alt="Lumina Logo" class="footer-logo-img">
+                    <h4 style="margin-top: 10px;">Lumina Grand Hotel</h4>
+                </div>
+                <p><i class="fa-solid fa-phone"></i> +351 210 000 000</p>
+                <p><i class="fa-solid fa-envelope"></i> reservas@lumina.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>LINKS ÚTILES</h4>
+            <ul style="list-style: none;">
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Términos y condiciones</a></li>
+                <li><a href="#">Privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2026 Lumina Grand Hotel. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            flatpickr("#entrada", { onChange: calcularTotal });
+            flatpickr("#salida", { onChange: calcularTotal });
+
+            function actualizarPrecio() {
+                const select = document.getElementById("habitacion");
+                const precio = select.options[select.selectedIndex].getAttribute("data-precio");
+
+                document.getElementById("precio").value = precio ? precio + " €/noche" : "";
+                calcularTotal();
+            }
+
+            function calcularTotal() {
+                const precioTexto = document.getElementById("precio").value;
+                const entrada = document.getElementById("entrada").value;
+                const salida = document.getElementById("salida").value;
+
+                if (!precioTexto || !entrada || !salida) return;
+
+                const precio = parseInt(precioTexto);
+                const fechaEntrada = new Date(entrada);
+                const fechaSalida = new Date(salida);
+
+                const dias = (fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24);
+
+                if (dias > 0) {
+                    const total = dias * precio;
+                    document.getElementById("total").value = total + " € (" + dias + " noches)";
+                } else {
+                    document.getElementById("total").value = "";
+                }
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const habitacionParam = params.get("habitacion");
+            const precioParam = params.get("precio");
+
+            if (habitacionParam) {
+                const select = document.getElementById("habitacion");
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === habitacionParam) {
+                        select.selectedIndex = i;
+                        document.getElementById("precio").value = precioParam + " €/noche";
+                    }
+                }
+            }
+
+            function guardarReserva(event) {
+                event.preventDefault();
+
+                const nombre = document.getElementById("nombre").value;
+                const habitacion = document.getElementById("habitacion").value;
+                const precio = document.getElementById("precio").value;
+                const entrada = document.getElementById("entrada").value;
+                const salida = document.getElementById("salida").value;
+                const total = document.getElementById("total").value;
+
+                const aviso = document.getElementById("mensaje-exito");
+                aviso.style.display = "block";
+
+                const contenido = "Nombre,Habitacion,Precio,Entrada,Salida,Total\n" +
+                    nombre + "," + habitacion + "," + precio + "," + entrada + "," + salida + "," + total;
+
+                const blob = new Blob([contenido], { type: "text/csv" });
+                const url = window.URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "reserva.csv";
+                a.click();
+                
+                setTimeout(() => { aviso.style.display = "none"; }, 4000);
+            }
+            </script>
+    
+    <script src="auth.js"></script>
+
+</body>
+</html>

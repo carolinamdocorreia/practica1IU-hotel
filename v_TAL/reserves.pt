@@ -1,0 +1,143 @@
+<html metal:use-macro="load: base.pt">
+<head></head>
+<body>
+    <header metal:fill-slot="main-header">
+        <h1>${titol}</h1>
+    </header>
+
+<main metal:fill-slot="main">   
+
+<div class="login-card">
+
+    <h2>Reservar habitación</h2>
+
+    <form onsubmit="guardarReserva(event)">
+
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label>Habitación</label>
+            <select id="habitacion" onchange="actualizarPrecio()" required>
+                <option value="">Selecciona una habitación</option>
+                <option value="Royal Ocean Suite" data-precio="450">Royal Ocean Suite (450€/noche)</option>
+                <option value="Executive Garden" data-precio="280">Executive Garden (280€/noche)</option>
+                <option value="Classic Urban" data-precio="195">Classic Urban (195€/noche)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Precio por noche</label>
+            <input type="text" id="precio" readonly>
+        </div>
+
+        <div class="form-group">
+            <label>Fecha entrada</label>
+            <input type="text" id="entrada" required>
+        </div>
+
+        <div class="form-group">
+            <label>Fecha salida</label>
+            <input type="text" id="salida" required>
+        </div>
+
+        <div class="form-group">
+            <label>Total (€)</label>
+            <input type="text" id="total" readonly>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;">
+            Confirmar reserva
+        </button>
+
+    </form>
+
+    <div id="mensaje-exito" style="text-align: center; margin-top: 20px; color: #27ae60; font-weight: bold; display: none;">
+        Reserva confirmada
+    </div>
+
+</div>
+</main>
+    <footer metal:fill-slot="main-footer"></footer>
+
+    <metal:css fill-slot="extra_js">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            flatpickr("#entrada", { onChange: calcularTotal });
+            flatpickr("#salida", { onChange: calcularTotal });
+
+            function actualizarPrecio() {
+                const select = document.getElementById("habitacion");
+                const precio = select.options[select.selectedIndex].getAttribute("data-precio");
+
+                document.getElementById("precio").value = precio ? precio + " €/noche" : "";
+                calcularTotal();
+            }
+
+            function calcularTotal() {
+                const precioTexto = document.getElementById("precio").value;
+                const entrada = document.getElementById("entrada").value;
+                const salida = document.getElementById("salida").value;
+
+                if (!precioTexto || !entrada || !salida) return;
+
+                const precio = parseInt(precioTexto);
+                const fechaEntrada = new Date(entrada);
+                const fechaSalida = new Date(salida);
+
+                const dias = (fechaSalida - fechaEntrada) / (1000 * 60 * 60 * 24);
+
+                if (dias > 0) {
+                    const total = dias * precio;
+                    document.getElementById("total").value = total + " € (" + dias + " noches)";
+                } else {
+                    document.getElementById("total").value = "";
+                }
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const habitacionParam = params.get("habitacion");
+            const precioParam = params.get("precio");
+
+            if (habitacionParam) {
+                const select = document.getElementById("habitacion");
+                for (let i = 0; i < select.options.length; i++) {
+                    if (select.options[i].value === habitacionParam) {
+                        select.selectedIndex = i;
+                        document.getElementById("precio").value = precioParam + " €/noche";
+                    }
+                }
+            }
+
+            function guardarReserva(event) {
+                event.preventDefault();
+
+                const nombre = document.getElementById("nombre").value;
+                const habitacion = document.getElementById("habitacion").value;
+                const precio = document.getElementById("precio").value;
+                const entrada = document.getElementById("entrada").value;
+                const salida = document.getElementById("salida").value;
+                const total = document.getElementById("total").value;
+
+                const aviso = document.getElementById("mensaje-exito");
+                aviso.style.display = "block";
+
+                const contenido = "Nombre,Habitacion,Precio,Entrada,Salida,Total\n" +
+                    nombre + "," + habitacion + "," + precio + "," + entrada + "," + salida + "," + total;
+
+                const blob = new Blob([contenido], { type: "text/csv" });
+                const url = window.URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "reserva.csv";
+                a.click();
+                
+                setTimeout(() => { aviso.style.display = "none"; }, 4000);
+            }
+            </script>
+    </metal:css>
+</body>
+</html>
