@@ -49,7 +49,6 @@
     <metal:css fill-slot="extra_js">
         <script src="auth.js"></script>
         <script>
-        // Lógica visual para mostrar/esconder la contraseña
         const togglePassword = document.querySelector('#togglePassword');
         const passwordField = document.querySelector('#password');
         const eyeIcon = document.querySelector('#eyeIcon');
