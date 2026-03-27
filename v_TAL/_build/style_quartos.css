@@ -85,14 +85,30 @@
 
 .room-header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 15px;
 }
 
-.room-title { font-size: 20px; color: var(--navy); font-weight: 700; }
+.room-title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
 
-.room-price { text-align: right; }
+.room-category {
+    font-size: 12px;
+    color: var(--gray-text);
+    margin-top: 4px;  
+    margin-bottom: 10px; 
+    letter-spacing: 0.5px; 
+}
+
+.room-price {
+    position: absolute;
+    right: 20px;
+    top: 260px;
+}
+
 .price-value { font-size: 20px; font-weight: 700; color: var(--gold); display: block; }
 .price-unit { font-size: 11px; color: var(--gray-text); }
 

@@ -9,93 +9,121 @@
         <h1>${titol}</h1>
     </header>
 
-    <main metal:fill-slot="main">
-        <div class="rooms-container">
-            
-            <div class="rooms-header-content">
-                <div>
-                    <h1 style="color: var(--navy); font-size: 32px;">NUESTRAS HABITACIONES</h1>
-                    <p style="color: var(--gray-text); font-size: 14px; margin-top: 5px;">La elegancia se encuentra con el descanso absoluto.</p>
-                </div>
-                <div style="color: var(--navy); cursor: pointer;"><i class="fa-solid fa-sliders"></i></div>
+    <main metal:fill-slot="main"><div class="rooms-container">
+
+        <div class="rooms-header-content">
+            <div>
+                <h1 style="color: var(--navy); font-size: 32px;">NUESTRAS HABITACIONES</h1>
+                <p style="color: var(--gray-text); font-size: 14px;">
+                    La elegancia se encuentra con el descanso absoluto.
+                </p>
             </div>
-
-            <section class="filter-section">
-                <div class="filter-chip active">Todas las habitaciones</div>
-                <div class="filter-chip">Suites Deluxe</div>
-                <div class="filter-chip">Vista al mar</div>
-                <div class="filter-chip">Ejecutivas</div>
-                <div class="filter-chip">Familiar</div>
-            </section> 
-
-            <div class="rooms-grid">
-                
-                <div class="room-card">
-                    <span class="room-status-badge status-available">Disponible</span>
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="room-content">
-                        <div class="room-header">
-                            <h3 class="room-title">Royal Ocean Suite</h3>
-                            <div class="room-price">
-                                <span class="price-value">450€</span>
-                                <span class="price-unit">/ noche</span>
-                            </div>
-                        </div>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Vista panorámica al Atlántico con terraza privada y acabados en mármol.</p>
-                        <div class="room-features">
-                            <span><i class="fa-solid fa-maximize"></i> 65m²</span>
-                            <span><i class="fa-solid fa-bed"></i> King Size</span>
-                            <span><i class="fa-solid fa-wifi"></i> Gratis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="room-card">
-                    <span class="room-status-badge status-busy">Ocupado</span>
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="room-content">
-                        <div class="room-header">
-                            <h3 class="room-title">Executive Garden</h3>
-                            <div class="room-price">
-                                <span class="price-value">280€</span>
-                                <span class="price-unit">/ noche</span>
-                            </div>
-                        </div>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Tranquilidad absoluta con acceso directo a los jardines botánicos privados del hotel.</p>
-                        <div class="room-features">
-                            <span><i class="fa-solid fa-maximize"></i> 40m²</span>
-                            <span><i class="fa-solid fa-bed"></i> Queen Size</span>
-                            <span><i class="fa-solid fa-mug-hot"></i> Nespresso</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="room-card" style="opacity: 0.8;">
-                    <span class="room-status-badge status-maintenance">Mantenimiento</span>
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80');"></div>
-                    <div class="room-content">
-                        <div class="room-header">
-                            <h3 class="room-title">Classic Urban</h3>
-                            <div class="room-price">
-                                <span class="price-value">195€</span>
-                                <span class="price-unit">/ noche</span>
-                            </div>
-                        </div>
-                        <p style="font-size: 14px; color: var(--gray-text); line-height: 1.5;">Diseño contemporáneo inspirado en el encanto histórico de la ciudad de Lisboa.</p>
-                        <div class="room-features">
-                            <span><i class="fa-solid fa-maximize"></i> 30m²</span>
-                            <span><i class="fa-solid fa-wifi"></i> Gratis</span>
-                            <span><i class="fa-solid fa-tv"></i> Smart TV</span>
-                        </div>
-                    </div>
-                </div>
-
+            <div style="color: var(--navy); cursor: pointer;">
+                <i class="fa-solid fa-sliders"></i>
             </div>
         </div>
-    </main>
+
+        <!-- FILTROS -->
+        <section class="filter-section">
+            <div class="filter-chip active" data-filter="all">Todas las habitaciones</div>
+            <div class="filter-chip" data-filter="suite">Suites Deluxe</div>
+            <div class="filter-chip" data-filter="vista-mar">Vista al mar</div>
+            <div class="filter-chip" data-filter="ejecutiva">Ejecutivas</div>
+            <div class="filter-chip" data-filter="familiar">Familiar</div>
+        </section>
+
+        <!-- HABITACIONES -->
+        <div class="rooms-grid">
+
+            <!-- Suite -->
+            <div class="room-card" data-category="suite vista-mar">
+                <span class="room-status-badge status-available">Disponible</span>
+                <div class="room-image" style="background-image:url('https://images.unsplash.com/photo-1631049307264-da0ec9d70304');"></div>
+                <div class="room-content">
+                    <div class="room-header">
+                        <h3 class="room-title">Royal Ocean Suite</h3>
+                        <span class="room-category">SUITE DELUXE CON VISTAS AL MAR</span>
+                        <div class="room-price">
+                            <span class="price-value">450€</span>
+                            <span class="price-unit">/ noche</span>
+                        </div>
+                    </div>
+                    <p>Vista panorámica al mar con terraza privada.</p>
+                </div>
+            </div>
+
+            <!-- Ejecutiva -->
+            <div class="room-card" data-category="ejecutiva">
+                <span class="room-status-badge status-available">Disponible</span>
+                <div class="room-image" style="background-image:url('https://images.unsplash.com/photo-1618773928121-c32242e63f39');"></div>
+                <div class="room-content">
+                    <div class="room-header">
+                        <h3 class="room-title">Executive Garden</h3>
+                        <span class="room-category">EJECUTIVA</span>
+                        <div class="room-price">
+                            <span class="price-value">280€</span>
+                            <span class="price-unit">/ noche</span>
+                        </div>
+                    </div>
+                    <p>Acceso a jardines privados.</p>
+                </div>
+            </div>
+
+            <!-- Familiar -->
+            <div class="room-card" data-category="familiar">
+                <span class="room-status-badge status-maintenance">Mantenimiento</span>
+                <div class="room-image" style="background-image:url('https://images.unsplash.com/photo-1590490360182-c33d57733427');"></div>
+                <div class="room-content">
+                    <div class="room-header">
+                        <h3 class="room-title">Classic Urban</h3>
+                        <span class="room-category">FAMILIAR</span>
+                        <div class="room-price">
+                            <span class="price-value">195€</span>
+                            <span class="price-unit">/ noche</span>
+                        </div>
+                    </div>
+                    <p>Habitación ideal para familias.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
 
     <footer metal:fill-slot="main-footer"></footer>
 
+    <metal:css fill-slot="extra_js">
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const filters = document.querySelectorAll('.filter-chip');
+    const rooms = document.querySelectorAll('.room-card');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', () => {
+
+            // Marcar chip activo
+            filters.forEach(f => f.classList.remove('active'));
+            filter.classList.add('active');
+
+            const category = filter.getAttribute('data-filter');
+
+            // Mostrar/ocultar habitaciones
+            rooms.forEach(room => {
+                const roomCategory = room.getAttribute('data-category');
+                if(category === 'all' || roomCategory.includes(category)) {
+                    room.style.display = 'block';
+                } else {
+                    room.style.display = 'none';
+                }
+            });
+        });
+    });
+
+});
+</script>
+
+    </metal:css>
     
 </body>
 </html>

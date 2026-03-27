@@ -44,6 +44,7 @@ html, body {
 }
 
 body {
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -216,7 +217,9 @@ img { max-width: 100%; height: auto; display: block; }
     to { opacity: 1; transform: translateY(0); } 
 }
 
-.offer-footer { display: flex; justify-content: space-between; align-items: center; padding-top: var(--s2); border-top: 1px solid var(--gray-light); }
+.offer-footer { display: flex; justify-content: space-between; align-items: center; padding-top: var(--s2); border-top: 1px solid var(--gray-light); 
+margin-top: auto;}
+
 .price-tag { font-weight: 800; font-size: 18px; }
 .btn-text { color: var(--gold); font-weight: 700; font-size: 13px; }
 
@@ -333,6 +336,9 @@ img { max-width: 100%; height: auto; display: block; }
     
     .page-content { padding-bottom: 80px; }
     .offer-room-style { flex: 0 0 85%; }
+
+    .offers-grid.horizontal-layout { justify-content: left;
+    margin: 24px;}
 }
 
 @media (max-width: 480px) {

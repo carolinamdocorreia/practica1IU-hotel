@@ -1,63 +1,59 @@
 <html metal:use-macro="load: base.pt">
 <head>
-  <metal:css fill-slot="extra_css">
-      <link rel="stylesheet" href="style_quartos.css" />
-  </metal:css>
-    </head>
+    <metal:css fill-slot="extra_css">
+        <link rel="stylesheet" href="style_instalacions.css" />
+    </metal:css>
+  </head>
 
 <body>
     <header metal:fill-slot="main-header">
         <h1>${titol}</h1>
     </header>
 
-    <main metal:fill-slot="main">        
-
-      <div class="button">
-        <button class="filter-chip" onclick="filtrar('todas')">Totes</button>
-        <button class="filter-chip" onclick="filtrar('habitacion')">Habitacions</button>
-        <button class="filter-chip" onclick="filtrar('lobby')">Lobby</button>
+    <main metal:fill-slot="main">  
+    
+    <div class="fotos">
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4" class=""></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5" class="active" aria-current="true"></button>
       </div>
+      
 
-      <div class="offer-room-style  "  >
-        <div class="offer-img-box" style="min-height:500px;">
-          <img class="habitacion" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Habitació">
-        </div>
-      </div>
-
-      <div class="offer-room-style  "  >
-        <div class="offer-img-box" style="min-height:500px;">
-          <img class="habitacion" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="habitacion">
-        </div>
-      </div>
-
-      <div class="offer-room-style  "  >
-        <div class="offer-img-box" style="min-height:500px;">
-          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Pack Romántico">
-        </div>
-      </div>
-
-
-      <div class="offer-room-style  "  >
-        <div class="offer-img-box" style="min-height:500px;">
-          <img class="lobby" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Lobby">
-        </div>
-      </div>
-        
-      <div class="offer-room-style  "  >
-        <div class="offer-img-box" style="min-height:500px;">
-            <img class="piscina" src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Piscina">
+      <div id="carouselExampleControlsNoTouching" class="carousel slide"
+      data-bs-touch="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" class="d-block w-100" alt="Habitació"/>
           </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" class="d-block w-100" alt="Habitació"/>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" class="d-block w-100" alt="packRomántico"/>
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" class="d-block w-100" alt="lobby" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945" class="d-block w-100" alt="piscina"/>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
-      <div id="lightbox" onclick="cerrar()">
-        <img id="img-grande">
       </div>
-   </main>
-
+    </main>
     <footer metal:fill-slot="main-footer"></footer>
-
-    <metal:css fill-slot="extra_js">
-        <script src="galeria.js"></script>
-    </metal:css>
 </body>
 </html>
