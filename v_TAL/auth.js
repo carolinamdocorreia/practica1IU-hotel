@@ -1,5 +1,5 @@
 /**
- * SISTEMA DE AUTENTICACIÓN - LUMINA GRAND HOTEL
+ * SISTEMA DE AUTENTICACIÓN 
  */
 
 document.addEventListener('DOMContentLoaded', () => {

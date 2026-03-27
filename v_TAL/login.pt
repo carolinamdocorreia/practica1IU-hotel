@@ -11,7 +11,6 @@
 
     <main metal:fill-slot="main">
        <div class="login-card">
-            <span class="badge badge-gold">Bienvenido de nuevo</span>
             <h2>Acceder a su cuenta</h2>
             
             <form class="login-form" id="loginForm" onsubmit="event.preventDefault(); fazerLogin(document.getElementById('email').value);"> 
@@ -39,7 +38,7 @@
             
             <p style="margin-top: 25px; font-size: 13px; color: var(--gray-text);">
                 ¿Aún no tienes cuenta? 
-                <a href="registo.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
+                <a href="#" style="color: var(--gold); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
             </p>
         </div>
     </main>

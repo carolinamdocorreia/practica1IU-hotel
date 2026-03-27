@@ -42,7 +42,6 @@
     cursor: pointer;
 }
 
-/* Layout principal */
 .w3-row {
     display: flex;
     align-items: flex-start;

@@ -1,5 +1,10 @@
 <html metal:use-macro="load: base.pt">
-<head></head>
+<head>
+  <metal:css fill-slot="extra_css">
+      <link rel="stylesheet" href="style_quartos.css" />
+  </metal:css>
+    </head>
+
 <body>
     <header metal:fill-slot="main-header">
         <h1>${titol}</h1>
@@ -7,28 +12,46 @@
 
     <main metal:fill-slot="main">        
 
-  <div class="button">
-    <button onclick="filtrar('todas')">Totes</button>
-    <button onclick="filtrar('habitacion')">Habitacions</button>
-    
-    <button onclick="filtrar('lobby')">Lobby</button>
-  </div>
+      <div class="button">
+        <button class="filter-chip" onclick="filtrar('todas')">Totes</button>
+        <button class="filter-chip" onclick="filtrar('habitacion')">Habitacions</button>
+        <button class="filter-chip" onclick="filtrar('lobby')">Lobby</button>
+      </div>
 
-  <div class="grid">
-    <img class="habitacion" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Habitació">
+      <div class="offer-room-style  "  >
+        <div class="offer-img-box" style="min-height:500px;">
+          <img class="habitacion" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b" alt="Habitació">
+        </div>
+      </div>
 
-    <img class="habitacion" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Habitació">
+      <div class="offer-room-style  "  >
+        <div class="offer-img-box" style="min-height:500px;">
+          <img class="habitacion" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="habitacion">
+        </div>
+      </div>
 
-    <img class="lobby" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Lobby">
+      <div class="offer-room-style  "  >
+        <div class="offer-img-box" style="min-height:500px;">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Pack Romántico">
+        </div>
+      </div>
 
-    <img class="piscina" src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Piscina">
 
-  </div>
+      <div class="offer-room-style  "  >
+        <div class="offer-img-box" style="min-height:500px;">
+          <img class="lobby" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" alt="Lobby">
+        </div>
+      </div>
+        
+      <div class="offer-room-style  "  >
+        <div class="offer-img-box" style="min-height:500px;">
+            <img class="piscina" src="https://images.unsplash.com/photo-1566073771259-6a8506099945" alt="Piscina">
+          </div>
+      </div>
 
-<div id="lightbox" onclick="cerrar()">
-  <img id="img-grande">
-</div>
-
+      <div id="lightbox" onclick="cerrar()">
+        <img id="img-grande">
+      </div>
    </main>
 
     <footer metal:fill-slot="main-footer"></footer>

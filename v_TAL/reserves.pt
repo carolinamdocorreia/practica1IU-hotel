@@ -1,5 +1,9 @@
 <html metal:use-macro="load: base.pt">
-<head></head>
+<head>
+    <metal:css fill-slot="extra_css">
+        <link rel="stylesheet" href="style_login.css" />
+    </metal:css>
+</head>
 <body>
     <header metal:fill-slot="main-header">
         <h1>${titol}</h1>
@@ -65,6 +69,7 @@
     <metal:css fill-slot="extra_js">
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script>
+        
             flatpickr("#entrada", { onChange: calcularTotal });
             flatpickr("#salida", { onChange: calcularTotal });
 

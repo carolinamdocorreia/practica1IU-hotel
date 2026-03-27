@@ -40,6 +40,12 @@
                     <a href="galeria.html">GALERIA</a>
                     <a href="reserves.html" class="reservar">RESERVAR</a>
                     <a href="login.html" class="nav-login">LOGIN</a>
+                    <div class="navLogOut">                    
+                        <a onclick="terminarSessao()" class="menu-item logout-btn">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Cerrar Sessión</span>
+                        </a>
+                    </div>
                 </nav>
 
             <button type="button" class="mobile-menu-btn" onclick="toggleMenu()">
@@ -52,6 +58,14 @@
                 <li><a href="galeria.html">GALERIA</a></li>
                 <li><a href="reserves.html" class="reservar-mobile">RESERVAR</a></li>
                 <li><a href="login.html" class="nav-login-mobile">LOGIN</a></li>
+                <li>         
+                    <div class="navLogOut-mobile">                    
+                        <a onclick="terminarSessao()" class="menu-item logout-btn">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Cerrar Sessión</span>
+                        </a>
+                    </div>
+                </li>
             </ul>
             <script>
             function toggleMenu() {
@@ -64,7 +78,6 @@
 
     <main>
        <div class="login-card">
-            <span class="badge badge-gold">Bienvenido de nuevo</span>
             <h2>Acceder a su cuenta</h2>
             
             <form class="login-form" id="loginForm" onsubmit="event.preventDefault(); fazerLogin(document.getElementById('email').value);"> 
@@ -92,7 +105,7 @@
             
             <p style="margin-top: 25px; font-size: 13px; color: var(--gray-text);">
                 ¿Aún no tienes cuenta? 
-                <a href="registo.html" style="color: var(--gold); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
+                <a href="#" style="color: var(--gold); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
             </p>
         </div>
     </main>

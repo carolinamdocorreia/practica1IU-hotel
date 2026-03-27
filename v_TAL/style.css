@@ -124,6 +124,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 .mobile-menu-btn { background: none; border: none; color: var(--white); font-size: 24px; cursor: pointer; display: none; }
 
+.logout-btn .fa-solid .fa-arrow-right-from-bracket{
+    color: #EF4444 !important;
+}
 .mobile-menu {
     color: var(--white);
     font-size: 20px;
