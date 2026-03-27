@@ -24,6 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const navLogout = document.querySelector('.navLogOut');
+
+    if (navLogout) {
+        if (nomeUsuario) {
+            navLogout.textContent = 'CERRAR SESIÓN';
+            navLogout.style.display = 'block';
+
+            navLogout.addEventListener('click', (e) => {
+                e.preventDefault();
+                terminarSessao();
+            });
+        } else {
+            navLogout.style.display = 'none';
+        }
+    }
+
     /* NAV MOBILE */
     const navLoginMobile = document.querySelector('.nav-login-mobile');
     if (navLoginMobile) {
@@ -35,6 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
             navLoginMobile.href = 'login.html';
         }
     }
+
+    const navLogoutMobile = document.querySelector('.navLogOut-mobile');
+    if (navLogoutMobile) {
+    if (nomeUsuario) { 
+        navLogoutMobile.textContent = 'CERRAR SESIÓN';
+        navLogoutMobile.style.display = 'block';
+
+        navLogoutMobile.addEventListener('click', (e) => {
+            e.preventDefault();
+            terminarSessao();
+        });
+    } else {
+        navLogoutMobile.style.display = 'none';
+    }
+}
 
     /* PERFIL */
     const nomePerfil = document.getElementById('nomePerfil');

@@ -149,6 +149,10 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 12px 20px 12px 30px;  
 }
 
+.logout-btn {
+    color: #EF4444 !important;
+}
+
 /* 5. HERO SECTION */
 .hero-premium {
     height: 70vh;
