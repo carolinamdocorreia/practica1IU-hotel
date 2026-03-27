@@ -1,18 +1,17 @@
-/* Estilos específicos da página de Perfil */
 .profile-header-large {
     background: var(--navy);
-    padding: 50px 20px 40px;
+    padding: 40px 16px 32px;
     text-align: center;
     color: var(--white);
     border-bottom-left-radius: 32px;
     border-bottom-right-radius: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .profile-avatar-edit {
     position: relative;
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     margin: 0 auto 15px;
 }
 
@@ -22,13 +21,14 @@
     border-radius: 50%;
     border: 3px solid var(--gold);
     object-fit: cover;
-    padding: 15;
+    padding: 6px;
+    box-sizing: border-box;
 }
 
 .edit-badge {
     position: absolute;
-    bottom: 5px;
-    right: 5px;
+    bottom: 4px;
+    right: 4px;
     background: var(--gold);
     width: 32px;
     height: 32px;
@@ -42,21 +42,21 @@
     cursor: pointer;
 }
 
-.profile-container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
+/* Layout principal */
+.w3-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
 }
 
-.loyalty-card {
-    background: linear-gradient(135deg, #1a2a44 0%, #0A192F 100%);
-    padding: 25px;
-    border-radius: var(--radius);
-    margin-bottom: 30px;
-    color: var(--white);
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
+.w3-quarter {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.w3-rest {
+    flex: 1;
+    min-width: 0;
 }
 
 .menu-group {
@@ -71,7 +71,8 @@
 .menu-item {
     display: flex;
     align-items: center;
-    padding: 18px 20px;
+    gap: 10px;
+    padding: 16px;
     text-decoration: none;
     color: var(--navy);
     border-bottom: 1px solid var(--beige-light);
@@ -79,13 +80,19 @@
     cursor: pointer;
 }
 
-.menu-item:last-child { border-bottom: none; }
-.menu-item:hover { background: var(--beige-light); }
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background: var(--beige-light);
+}
 
 .menu-item i:first-child {
-    width: 35px;
+    width: 22px;
     font-size: 18px;
     color: var(--gold);
+    text-align: center;
 }
 
 .menu-item span {
@@ -94,7 +101,9 @@
     font-weight: 500;
 }
 
-.logout-btn { color: #EF4444 !important; }
+.logout-btn {
+    color: #EF4444 !important;
+}
 
 .section-title {
     font-size: 11px;
@@ -103,4 +112,90 @@
     color: #64748b;
     margin: 0 0 10px 5px;
     letter-spacing: 1px;
+}
+
+.apartat {
+    display: block;
+    padding: 10px 0;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.valor {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 15px;
+}
+
+.btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.seccio-contingut {
+    display: none;
+    margin-top: 10px;
+}
+
+#seccio-datos {
+    display: block;
+}
+
+.titol-seccio {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--navy);
+}
+
+.form-check {
+    margin-bottom: 12px;
+}
+
+@media (max-width: 700px) {
+    .profile-header-large {
+        padding: 28px 12px 24px;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+    }
+
+    .profile-avatar-edit {
+        width: 90px;
+        height: 90px;
+    }
+
+    .w3-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .w3-quarter {
+        order: 2;
+        width: 100%;
+    }
+
+    .w3-rest {
+        order: 1;
+        width: 100%;
+    }
+
+    .menu-item {
+        padding: 14px;
+    }
+
+    .menu-item span {
+        font-size: 13px;
+    }
+
+    .valor {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
 }

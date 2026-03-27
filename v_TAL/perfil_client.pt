@@ -10,52 +10,36 @@
     </header>
 
     <main metal:fill-slot="main">
-
-        div.w3-       
         <div class="profile-header-large">
             <div class="profile-avatar-edit">
                 <img src="https://imagenes2.eltiempo.com/files/image_600_455/files/fp/uploads/2025/04/01/67ec4ef31f2ce.r_d.866-866-3464.jpeg" class="avatar-img" alt="Foto de Perfil">
                 <div class="edit-badge"><i class="fa-solid fa-camera"></i></div>
             </div>
-            <h2 id="nomePerfil" style="font-size: 24px;">Carregando...</h2>
-            <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 8px;">Membro Gold</p>
+            <h2 id="nomePerfil" style="font-size: 24px;">Cargando...</h2>
+            <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-top: 8px;">
+                Miembro Gold
+            </p>
         </div>
 
-        <div class="profile-container">
-            <div class="loyalty-card">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div>
-                        <p style="font-size: 10px; text-transform: uppercase; opacity: 0.8; letter-spacing: 1px;">Pontos Acumulados</p>
-                        <h3 style="font-size: 32px; color: var(--gold); margin: 5px 0;">12,450</h3>
-                    </div>
-                    <i class="fa-solid fa-crown" style="color: var(--gold); font-size: 24px;"></i>
-                </div>
-                <div style="margin-top: 20px; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
-                    <div style="width: 75%; height: 100%; background: var(--gold); border-radius: 3px;"></div>
-                </div>
-                <p style="font-size: 11px; margin-top: 10px; opacity: 0.7;">Faltam 2,550 pontos para o nível Platinum</p>
-            </div>
-            
-            <div class="w3-grid">
-            <div class="w3-thrid">
+        <div class="w3-row">
+            <div class="w3-quarter w3-container">
                 <p class="section-title">MI CUENTA</p>
                 <div class="menu-group">
-                    <a href="#" class="menu-item">
+                    <a href="#" class="menu-item" onclick="mostrarSeccio('datos'); return false;">
                         <i class="fa-solid fa-user-gear"></i>
                         <span>Datos Personales</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
-                    <a href="#" class="menu-item">
+                    <a href="#" class="menu-item" onclick="mostrarSeccio('reserves'); return false;">
                         <i class="fa-solid fa-clock-rotate-left"></i>
                         <span>Mis Reservas</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
                 </div>
 
-
                 <p class="section-title">Configuración</p>
-                    <div class="menu-group">
-                        <a href="#" class="menu-item">
+                <div class="menu-group">
+                    <a href="#" class="menu-item" onclick="mostrarSeccio('notis'); return false;">
                         <i class="fa-solid fa-bell"></i>
                         <span>Notificaciones</span>
                         <i class="fa-solid fa-chevron-right"></i>
@@ -64,25 +48,103 @@
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span>Cerrar Sessión</span>
                     </a>
+                </div>
+            </div>
+
+            <div class="w3-rest w3-container">
+
+                <div id="seccio-datos" class="seccio-contingut">
+                    <div class="w3-row">
+                        <div class="w3-half w3-container">
+                            <label class="apartat" for="nomePerfilInput">NOMBRE</label>
+                            <input type="text" class="valor" id="nomePerfilInput" name="usuari_name" readonly value="NOM">
+                        </div>
+
+                        <div class="w3-half w3-container">
+                            <label class="apartat" for="cognomUsuari">APELLIDOS</label>
+                            <input type="text" class="valor" id="cognomUsuari" name="usuari_surname" readonly value="COGNOM1 COGNOM2">
+                        </div>
                     </div>
-                </div>
+
+                    <div class="w3-row">
+                        <div class="w3-half w3-container">
+                            <label class="apartat" for="emailUsuari">EMAIL</label>
+                            <input type="text" class="valor" id="emailUsuari" readonly value="email@gmail.com">
+                        </div>
+
+                        <div class="w3-half w3-container">
+                            <label class="apartat" for="dniUsuari">Documento de Identidad</label>
+                            <input type="text" class="valor" id="dniUsuari" name="usuari_dni" readonly value="1234567A">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">GUARDAR</button>
                 </div>
 
-                <div class="w3-twothrid">
-                <p class="hola">holaaaaa</p>
+                <div id="seccio-reserves" class="seccio-contingut">
+                    <table class="table mb-4">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">DATA D'ENTRADA</th>
+                                <th scope="col">DATA DE SORTIDA</th>
+                                <th scope="col">Nº PERSONES</th>
+                                <th scope="col">PRECIO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th class="text-nowrap" scope="row">#reserva</th>
+                                <td>dd/mm/aaaa</td>
+                                <td>dd/mm/aaaa</td>
+                                <td>#</td>
+                                <td>€€</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
+                <div id="seccio-notis" class="seccio-contingut">
+                    <span class="titol-seccio">NOTIFICACIONES</span>
+                    <p>Per on vol rebre promocions?</p>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchEmail" checked>
+                        <label class="form-check-label" for="switchEmail">Email</label>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchSMS" checked>
+                        <label class="form-check-label" for="switchSMS">SMS</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">GUARDAR</button>
+                </div>
+
+            </div>
+        </div>
     </main>
-        
-    <footer metal:fill-slot="main-footer"></footer>
 
+    <footer metal:fill-slot="main-footer"></footer>
 
     <metal:css fill-slot="extra_js">
         <script src="auth.js"></script>
         <script>
             verificarAcesso();
+
+            function mostrarSeccio(seccio) {
+                const totes = document.querySelectorAll('.seccio-contingut');
+
+                totes.forEach(function(div) {
+                    div.style.display = 'none';
+                });
+
+                const activa = document.getElementById('seccio-' + seccio);
+                if (activa) {
+                    activa.style.display = 'block';
+                }
+            }
         </script>
     </metal:css>
-    
 </body>
 </html>
